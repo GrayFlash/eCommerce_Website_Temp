@@ -2,14 +2,21 @@
 {% include "navbar.html" %}
 {% include "subcat.html" %}
 
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index_styles.css') }}">
+{% endblock %}
+
 {% block body %}
 
 <!-- Image for E-commerce -->
-
+<div class="p-3 mb-2 bg-light">
+    <img class="image_fluid mx-auto d-block img-fluid" src="{{ url_for('static', filename='images/index_image.jpg')}}" alt="Chania">
+</div>
 <!-- End of Image -->
 
 <!-- Category Cards -->
-<div class="card-deck">
+<br><br>
+<div class="card-deck mx-auto .ml-5">
 
   <div class="card" style="width: 18rem;">
     <div class="card-body">
