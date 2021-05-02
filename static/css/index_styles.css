@@ -2,3 +2,17 @@
     max-width: 60%;
     height: auto;
 }
+
+.card-image-set {
+    height: 40%;
+    width: auto;
+}
+
+.card-image-edit {
+    height:80%;
+    width: 80%;
+}
+#cartIcon {
+	height: 20px;
+	width: 22px;
+}

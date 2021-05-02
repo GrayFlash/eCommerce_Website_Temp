@@ -29,7 +29,12 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
+            <!-- <a class="nav-link" href="#">Cart</a> -->
+
+            <a class="link" href="/cart">
+              <img src=" {{ url_for('static', filename='images/shoppingCart.png')}}" id="cartIcon" />
+              {{noOfItems}} items
+            </a>
           </li>
 
       </ul>
