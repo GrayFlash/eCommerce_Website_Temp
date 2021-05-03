@@ -1,25 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 import numpy as np
 
-
-# In[ ]:
-
-
 def make_soup(url):
     return BeautifulSoup(requests.get(url).text, 'html.parser')
-
-
-# In[ ]:
-
-
 def scrapSubs(url):
     soup = make_soup(url)
     items = soup.find_all('li',{'class':'s-item'})
@@ -40,9 +25,6 @@ def scrapSubs(url):
     return item_details
 
 
-# In[ ]:
-
-
 def scrapCategory(category, url):
     out = []
     soup = make_soup(url)
@@ -60,15 +42,6 @@ def scrapCategory(category, url):
             
             df.to_csv(title_sub+'.csv')
 
-
-# In[ ]:
-
-
 scrapCategory("Clothes", "https://www.ebay.com/b/Fashion/bn_7000259856")
 
-
-# In[ ]:
-
-
 scrapCategory("software", "https://www.ebay.com/b/Electronics/bn_7000259124")
-
