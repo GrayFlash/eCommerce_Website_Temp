@@ -11,16 +11,27 @@ subCategories = {"Clothing_and_Accessories":["Mens_Accessories", "Mens_Clothing"
                  "Software_Apparels":["Camera_Drones", "Smart_Watches", "Vehicle_Electronics"]
 }
 subCategoryData = {}
-# category_img = ["images/clothing_accesories.jpg", "images/software_devices.jpg"]
 category_img = ["https://www.shutterstock.com/image-vector/fashion-store-boutique-accessories-bags-footwear-786450895", "https://www.shutterstock.com/image-photo/business-devices-on-brown-wooden-desk-1373777756"]
 
+cart_data = []
+mock_id = 0
 for cat in categories:
     for data in subCategories[cat]:
         df = pd.read_csv(data+".csv")
         # print(df.shape)
         df = df.iloc[:, 1:]
         arr = np.array(df)
-        subCategoryData[data] = arr
+        arr_temp = []
+        for x in arr:
+            desc = x[0]
+            # print(desc)
+            img_src = x[1]
+            price = x[3].split(' ')[1]
+            quantity = 0
+            ebay_url = x[2]
+            arr_temp.append([mock_id, desc, img_src, price, quantity, ebay_url])
+            mock_id+=1
+        subCategoryData[data] = arr_temp
         # print(arr)
 
 app = Flask(__name__)
@@ -52,8 +63,25 @@ def Category(name):
             arr = subCategoryData[sub_category]
             for i in arr:
                 li.append(arr)
-        return render_template("category.html", data=li, noOfItems=noOfItems)
+        return render_template("category.html", category=name, data=li, noOfItems=noOfItems)
+
+
+@app.route('/add/<category>/<id>')
+def Add(category, id):
+    global noOfItems
+    noOfItems+=1
+    sub_category_list = subCategories[category]
+    li = []
+    for sub_category in sub_category_list:
+        arr = subCategoryData[sub_category]
+        for i in arr:
+            li.append(arr)
+    global cart_data
+    id = int(id)
+    print(li[id][0])
+    cart_data.append(li[id][0])
+    return redirect(url_for('Category', name=category))
 
 @app.route('/cart')
 def Cart_Viewer():
-    return render_template("cart.html", noOfItems=noOfItems)
+    return render_template("cart.html", noOfItems=noOfItems, cart_data=cart_data)
