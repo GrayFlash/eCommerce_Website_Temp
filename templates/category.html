@@ -9,27 +9,25 @@
 
 {% block body %}
 
-<div class="d-flex align-content-stretch justify-content-around flex-wrap" id="shirtCard">
+<div class="d-flex align-content-stretch justify-content-around flex-wrap p-3" id="shirtCard">
 
     {% for li in data %}
         {% for item in li %}
           
-            <div class="card text-center custom-card" style="width: 18rem; height: 36rem;">
+            <div class="card text-center custom-card d-flex" style="width: 18rem; height: 36rem;">
                 <div class="card-image-set">
-                    <img src={{ item[1] }} class="card-img-top card-image-src" alt="...">
+                    <img src={{ item[2] }} class="card-img-top card-image-src" alt="...">
                 </div>
                 <div class="card-body">
                     <!-- <h5 class="card-title">Card title</h5> -->
-                    <p class="card-text">{{item[0]}}</p>
+                    <p class="card-text">{{item[1]}}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ item[3].split(' ')[0] }}</li>
-                    <li class="list-group-item">{{ item[3].split(' ')[1] }}</li>
-                    <li class="list-group-item">{{ item[3].split(' ')[2] }}</li>
+                    <li class="list-group-item">{{ item[3] }}</li>
                 </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                <div class="card-body align-self-end">
+                    <a href={{ item[5] }} class="card-link">Visit Ebay</a>
+                    <a href="/add/{{category}}/{{item[0]}}" class="card-link">Add to Cart</a>
                 </div>
             </div>
 
