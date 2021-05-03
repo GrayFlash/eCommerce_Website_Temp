@@ -1,5 +1,14 @@
+.homepage-bg {
+    background-color: #cfc9c8;
+}
+
+.Image-Home {
+    height:100;
+    width: 100%;
+}
+
 .card-image-set {
-    height: 40%;
+    height: 70%;
 }
 
 .card-image-src {
@@ -16,8 +25,8 @@
 }
 
 .card-image-edit {
-    height:80%;
-    width: absolute;
+    height:100%;
+    width: 100%;
 }
 
 #cartIcon {

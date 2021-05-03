@@ -9,8 +9,8 @@
 {% block body %}
 <div class="homepage-bg">
 <!-- Image for E-commerce -->
-<div class="p-3 mb-2 bg-light">
-    <img class="image_fluid mx-auto d-block img-fluid" src="{{ url_for('static', filename='images/index_image.jpg')}}" alt="Chania">
+<div class="p-3 mb-1 bg-light">
+    <img class="image_fluid mx-auto d-block img-fluid Image-Home" src="{{ url_for('static', filename='images/index_image.jpg')}}" alt="Chania">
 </div>
 <!-- End of Image -->
 
@@ -20,24 +20,30 @@
   <div class="card" style="width: 18rem;">
     <div class="card-body">
         <div class="card-image-set">
-            <img src="{{ url_for('static', filename='images/clothing_accesories.jpg') }}" class="card-img-top card-image-edit img_fluid mx-auto" alt="...">
+            <img src="{{ url_for('static', filename='images/clothing_accesories.jpg') }}" class="card-img-top card-image-edit" alt="...">
         </div>
-      <h5 class="card-title">Clothing And Accessories</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Fashion and In Styles</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="/category/Clothing_and_Accessories" class="card-link">Card link</a>
+        <div class="card-text p-2">
+          <h5 class="card-title">Clothing And Accessories</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Fashion and In Styles</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="/category/Clothing_and_Accessories" class="card-link">Card link</a>
+        </div>
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-    <div class="card-image-set">
-        <img src="{{ url_for('static', filename='images/software_devices.jpg') }}" class="card-img-top img_fluid mx-auto card-image-edit" alt="...">
-    </div>
-      <h5 class="card-title">Software Accessories</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Non-Functional</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="/category/Software_Apparels" class="card-link">Card link</a>
+      <div class="card-image-set">
+          <img src="{{ url_for('static', filename='images/software_devices.jpg') }}" class="card-img-top card-image-edit" alt="...">
+      </div>
+      <div class="card-text p-2">
+        <h5 class="card-title">Software Accessories</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Non-Functional</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="/category/Software_Apparels" class="card-link">
+          Card link
+        </a>
+      </div>
     </div>
   </div>
 
