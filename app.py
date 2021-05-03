@@ -17,7 +17,7 @@ cart_data = []
 mock_id = 0
 for cat in categories:
     for data in subCategories[cat]:
-        df = pd.read_csv(data+".csv")
+        df = pd.read_csv("scraped_data/"+data+".csv")
         # print(df.shape)
         df = df.iloc[:, 1:]
         arr = np.array(df)
