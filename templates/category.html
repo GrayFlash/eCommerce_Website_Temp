@@ -25,9 +25,13 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{ item[3] }}</li>
                 </ul>
-                <div class="card-body align-self-end">
-                    <a href={{ item[5] }} class="card-link">Visit Ebay</a>
-                    <a href="/add/{{category}}/{{item[0]}}" class="card-link">Add to Cart</a>
+                <div class="card-body align-self-end card-buttons">
+                    <a href={{ item[5] }} class="card-link">
+                        <button type="button" class="btn btn-success">Ebay</button>
+                    </a>
+                    <a href="/add/{{category}}/{{item[0]}}" class="card-link">
+                        <button type="button" class="btn btn-primary">Add to Cart</button>
+                    </a>
                 </div>
             </div>
 

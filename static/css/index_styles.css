@@ -7,6 +7,10 @@
     width: 100%;
 }
 
+.card-buttons {
+    max-height:20%;
+}
+
 .custom-card {
     padding: 20px;
 }
